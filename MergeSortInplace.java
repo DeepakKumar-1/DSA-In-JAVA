@@ -28,7 +28,7 @@ public class MergeSortInplace {
      static void merge(int []arr, int mid, int start, int end){
         int i = start;
         int j = mid + 1;
-        int k = 0;
+        int k = start;
         int [] mix  = new int[arr.length];
 
         while(i <= mid && j <= end){
@@ -56,8 +56,8 @@ public class MergeSortInplace {
          }
 
          // Now Sorted Array in the Main Array
-         for(int c = 0; c < mix.length; c++){
-             arr[c] = mix[c];
-         }
+         for(int c = start; c <= end; c++){
+            arr[c] = mix[c];
+        }
      }
 }
